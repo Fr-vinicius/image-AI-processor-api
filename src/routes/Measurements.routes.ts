@@ -16,7 +16,6 @@ const isValidBase64 = (str: string): boolean => {
     return base64Regex.test(str);
 };
 
-// Função para verificar se uma string é "WATER" ou "GAS" (case insensitive)
 const isValidType = (type: string): boolean => {
     if (typeof type !== 'string' || type.trim() === '') {
         return false;
@@ -25,12 +24,10 @@ const isValidType = (type: string): boolean => {
     return validTypes.includes(type.toUpperCase());
 };
 
-// Função para verificar se uma entrada é uma string não vazia
 const isValidString = (str: string): boolean => {
     return typeof str === 'string' && str.trim() !== '';
 };
 
-// Função para verificar se uma string é uma data válida
 const isValidDate = (dateStr: string): boolean => {
     const date = new Date(dateStr);
     return !isNaN(date.getTime());
