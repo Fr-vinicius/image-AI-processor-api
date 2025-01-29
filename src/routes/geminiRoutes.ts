@@ -11,7 +11,7 @@ const geminiRouter = Router();
 
 geminiRouter.post('/', async (request: Request, response: Response) => {
   try {
-    const { image } = request.body; // Supondo que o JSON tenha uma chave "image" com o base64
+    const { image } = request.body;
 
     if (!image) {
       return response.status(400).send("Imagem não fornecida.");
@@ -27,7 +27,7 @@ geminiRouter.post('/', async (request: Request, response: Response) => {
     const mimeType = matches[1];
     const base64Data = image.replace(base64Pattern, "");
 
-    // Criar um arquivo temporário com um nome único
+   
     const tempFileName = `${uuidv4()}.${mimeType}`;
     const tempFilePath = path.join(__dirname, tempFileName);
 
